@@ -1,0 +1,114 @@
+<div class="card">
+  <div class="container">
+    <h2> TECHNICAL TASK</h2>
+
+    <form [formGroup]="myForm">
+      <div class="row">
+        <div class="col-md-6 row">
+          <div class="header"> Step 1 </div> 
+          <div class="form-group row">
+            <label class="col-form-label col-md-4 textbox  text-right  font-weight-bold"> No of Textbox:</label>
+            <div class="col-md-8">
+              <input formControlName="noOfInstallement" (onChange)="noOfInstallementval1()"  (change)="noOfInstallementval1()" class="form-control" type="number" placeholder="00">
+            </div>
+            <div class="col-md-12 button_section">
+            <button class="btn btn-success" (click)="addNewItemInstallement1()" >Add Textbox</button>
+          </div>            
+            </div> 
+            <div class="form-group row">
+              <div class="col-md-4">
+                <input type="checkbox" name="allselect" id="allselect">
+              </div>             
+               <div class="col-md-8">
+                 <label class="col-form-label col-md-4  text-right  font-weight-bold" for="allselect">All Select</label>
+                 </div>
+             </div>
+
+        <div class="col-12"  *ngFor="let value of noOfInstallementval; let i = index">
+
+        
+          <div class="form-group row"> 
+           
+            <div class="col-md-4">
+              <input  type="checkbox" formControlName="select{{i+1}}" id="allselect{{i+1}}">
+            </div>
+            <div class="col-md-8">
+              <input  formControlName="step{{i+1}}" class="form-control" 
+              (change)="totlaAmount1();" 
+              type="number" placeholder="Amount"  >
+            </div>
+          </div>
+
+        </div>  
+
+        <div class="row">
+          <div class="col-md-4 text-right">
+            Output Is
+          </div>
+          <div class="col-md-8">
+            <span>Select All <b>{{noOfInstallementval.length}} Items</b> Total Numbers <b>
+                 {{totalNumber1}} </b> </span>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- //---------------- -->
+      <div class="col-md-6 row">
+        <div class="header"> Step 2</div> 
+        <div class="form-group row">
+          <label class="col-form-label col-md-4 textbox  text-right  font-weight-bold"> No of Textbox:</label>
+          <div class="col-md-8">
+            <input formControlName="noOfInstallement2" (onChange)="noOfInstallementval2()"  (change)="noOfInstallementval2()" class="form-control" type="number" placeholder="00">
+          </div>
+          <div class="col-md-12 button_section">
+          <button class="btn btn-success" (click)="addNewItemInstallement2()" >Add Textbox</button>
+        </div>            
+          </div> 
+          <div class="form-group row">
+            <div class="col-md-4">
+              <input type="checkbox" name="allselect2" id="allselect2">
+            </div>             
+             <div class="col-md-8">
+               <label class="col-form-label col-md-4  text-right  font-weight-bold" for="allselect2">All Select</label>
+               </div>
+           </div>
+
+      <div class="col-12"  *ngFor="let value of noOfInstallementval2; let i = index">
+
+      
+        <div class="form-group row"> 
+         
+          <div class="col-md-4">
+            <input  type="checkbox" name="allselect2" id="allselect">
+          </div>
+          <div class="col-md-8">
+            <input  formControlName="step2{{i+1}}" class="form-control" type="number" placeholder="Amount" (change)="totlaNumber2();" >
+          </div>
+        </div>
+
+      </div>  <div class="row">
+        <div class="col-md-4 text-right">
+          Output Is
+        </div>
+        <div class="col-md-8">
+          <span>Select All <b>{{noOfInstallementval2.length}} Items</b> Total Number <b>{{totalNumber2}}</b> </span>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="form-group row mt-5">
+       
+      <div class="col-md-12 d-flex justify-content-center align-items-center">
+        <button  type="button" class="btn btn-success mx-2" (click)="save()">Save</button>   
+        
+      </div> 
+    </div>
+
+
+ 
+      </form>
+    </div> 
+</div>
+ 
